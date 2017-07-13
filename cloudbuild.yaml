@@ -1,0 +1,7 @@
+steps:
+- name: gcr.io/cloud-builders/git
+  args: ['clone', 'https://github.com/jbub/ghostwriter', 'themes/ghostwriter']
+- name: gcr.io/cloud-builders/docker
+  args: ['run', '-v', '/workspace:/src', '-e', 'HUGO_ENV=production', 'felicianotech/docker-hugo:0.24.1', 'hugo', '-v', '-s', '/src']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['app', 'deploy', '--project', '$PROJECT_ID', app.yaml]

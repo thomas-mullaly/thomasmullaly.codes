@@ -1,0 +1,7 @@
+baseURL = "https://thomasmullaly.codes/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "ghostwriter"
+
+[permalinks]
+  post = "/:year/:month/:title/"
