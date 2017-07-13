@@ -1,4 +1,6 @@
 steps:
+- name: gcr.io/cloud-builders/gsutil
+  args: ['cp', 'gs://sophie-pictures/*.jpeg', 'static/images/sophie']
 - name: gcr.io/cloud-builders/git
   args: ['clone', 'https://github.com/jbub/ghostwriter', 'themes/ghostwriter']
 - name: gcr.io/cloud-builders/docker
