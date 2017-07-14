@@ -4,7 +4,7 @@ steps:
   args: ['mkdir', '-p', 'static/images/sophie']
 - name: gcr.io/cloud-builders/gsutil
   id: cat
-  args: ['-m', cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
+  args: ['-m', 'cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
   waitFor:
   - mkdir
 - name: gcr.io/cloud-builders/git
