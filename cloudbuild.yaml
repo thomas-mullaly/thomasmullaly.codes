@@ -1,6 +1,6 @@
 steps:
 - name: ubuntu
-  args: ['mkdir', '-R', 'static/images/sophie']
+  args: ['mkdir', '-p', 'static/images/sophie']
 - name: gcr.io/cloud-builders/gsutil
   args: ['cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
 - name: gcr.io/cloud-builders/git
