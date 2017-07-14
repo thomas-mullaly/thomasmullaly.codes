@@ -2,6 +2,8 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+default_expiration: "10m"
+
 handlers:
 - url: /
   static_files: public/index.html
@@ -21,6 +23,9 @@ handlers:
   secure: always
 - url: /dist
   static_dir: public/dist
+  secure: always
+- url: /images
+  static_dir: public/images
   secure: always
 - url: /(.*)/$
   static_files: public/\1/index.html
