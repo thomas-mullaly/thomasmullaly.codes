@@ -1,13 +1,24 @@
 steps:
 - name: ubuntu
+  id: mkdir
   args: ['mkdir', '-p', 'static/images/sophie']
 - name: gcr.io/cloud-builders/gsutil
+  id: cat
   args: ['cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
+  waitFor:
+  - mkdir
 - name: gcr.io/cloud-builders/git
+  id: theme
   args: ['clone', 'https://github.com/jbub/ghostwriter', 'themes/ghostwriter']
 - name: felicianotech/docker-hugo:0.24.1
-  args: ['-v']
+  args: ['hugo', '-v']
+  id: hugo
   env:
   - HUGO_ENV=production
+  waitFor:
+  - cat
+  - theme
 - name: gcr.io/cloud-builders/gcloud
   args: ['app', 'deploy', '--project', '$PROJECT_ID', app.yaml]
+  waitFor:
+  - hugo
