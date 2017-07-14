@@ -1,9 +1,13 @@
 steps:
+- name: ubuntu
+  args: ['mkdir', '-R', 'static/images/sophie']
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'gs://sophie-pictures/*.jpeg', 'static/images/sophie']
+  args: ['cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
 - name: gcr.io/cloud-builders/git
   args: ['clone', 'https://github.com/jbub/ghostwriter', 'themes/ghostwriter']
-- name: gcr.io/cloud-builders/docker
-  args: ['run', '-v', '/workspace:/src', '-e', 'HUGO_ENV=production', 'felicianotech/docker-hugo:0.24.1', 'hugo', '-v', '-s', '/src']
+- name: felicianotech/docker-hugo:0.24.1
+  args: ['-v']
+  env:
+  - HUGO_ENV=production
 - name: gcr.io/cloud-builders/gcloud
   args: ['app', 'deploy', '--project', '$PROJECT_ID', app.yaml]
