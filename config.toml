@@ -1,7 +1,16 @@
 baseURL = "https://thomasmullaly.codes/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Thomas's Blog"
 theme = "ghostwriter"
 
 [permalinks]
   post = "/:year/:month/:title/"
+
+[Author]
+  name = "Thomas Mullaly"
+
+[Params]
+  twitter = "https://twitter.com/thomas_mullaly"
+  github = "https://github.com/thomas-mullaly"
+  email = "thomas.mullaly@gmail.com"
+  shareGooglePlus = false
