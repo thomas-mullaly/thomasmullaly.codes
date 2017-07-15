@@ -13,8 +13,8 @@ handlers:
   static_files: public/404.html
   upload: /404.html
   secure: always
-- url: /css
-  static_dir: public/css
+- url: /styles
+  static_dir: public/styles
   secure: always
 - url: /fonts
   static_dir: public/fonts
