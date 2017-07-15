@@ -19,6 +19,6 @@ steps:
   - cat
   - theme
 - name: gcr.io/cloud-builders/gcloud
-  args: ['app', 'deploy', '--project', '$PROJECT_ID', app.yaml]
+  args: ['app', 'deploy', '--quiet', '--project', '$PROJECT_ID', app.yaml]
   waitFor:
   - hugo
