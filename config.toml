@@ -2,6 +2,7 @@ baseURL = "https://thomasmullaly.codes/"
 languageCode = "en-us"
 title = "Thomas's Blog"
 theme = "ghostwriter"
+googleAnalytics = "UA-77282496-2"
 
 [permalinks]
   post = "/:year/:month/:day/:title/"
