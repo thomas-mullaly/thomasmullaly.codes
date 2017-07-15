@@ -38,3 +38,29 @@ handlers:
 - url: /.*
   script: _go_app
   secure: always
+
+skip_files: |
+  ^(.*/)?(
+  (archetypes/.*)|
+  (app\.yaml)|
+  (app\.yml)|
+  (index\.yaml)|
+  (index\.yml)|
+  (config\.yaml)|
+  (cloudbuild\.yaml)|
+  (#.*#)|
+  (.*~)|
+  (.*\.py[co])|
+  (.*\.po)|
+  (.*\.pot)|
+  (\..*)|
+  (manage\.py)|
+  (README\.md)|
+  (LICENSE)|
+  (content\/.*)|
+  (data\/.*)|
+  (static\/.*)|
+  (layouts\/.*)|
+  (\.git\/.*)|
+  (\.gitignore)|
+  )$

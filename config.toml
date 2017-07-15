@@ -4,7 +4,10 @@ title = "Thomas's Blog"
 theme = "ghostwriter"
 
 [permalinks]
-  post = "/:year/:month/:title/"
+  post = "/:year/:month/:day/:title/"
+
+[Taxonomies]
+  tag = "tags"
 
 [Author]
   name = "Thomas Mullaly"
