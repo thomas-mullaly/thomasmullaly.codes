@@ -9,14 +9,10 @@ handlers:
   static_files: public/index.html
   upload: /
   secure: always
-- url: /sitemap.xml
-  static_files: public/sitemap.xml
-  upload: /sitemap.xml
-  secure: always
-- url: /index.xml
-  static_files: public/index.xml
-  upload: /index.xml
-  secure: always
+- url: /(.*\.xml)
+  mime_type: application/xml
+  static_files: public/\1
+  upload: /(.*\.xml)
 - url: /404.html
   static_files: public/404.html
   upload: /404.html
