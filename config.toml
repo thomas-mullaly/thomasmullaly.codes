@@ -13,7 +13,7 @@ googleAnalytics = "UA-77282496-2"
 
 [Author]
   name = "Thomas Mullaly"
-  profile = "/page/about-me"
+  profile = "/page/about-me/"
 
 [Params]
   twitter = "https://twitter.com/thomas_mullaly"
@@ -29,5 +29,5 @@ googleAnalytics = "UA-77282496-2"
 
 [[menu.main]]
   name = "About"
-  url = "/page/about-me"
+  url = "/page/about-me/"
   weight = 2
