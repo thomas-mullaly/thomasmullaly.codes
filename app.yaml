@@ -20,14 +20,8 @@ handlers:
 - url: /styles
   static_dir: public/styles
   secure: always
-- url: /fonts
-  static_dir: public/fonts
-  secure: always
 - url: /js
   static_dir: public/js
-  secure: always
-- url: /img
-  static_dir: public/img
   secure: always
 - url: /dist
   static_dir: public/dist
@@ -35,6 +29,7 @@ handlers:
 - url: /images
   static_dir: public/images
   secure: always
+  expiration: "12h"
 - url: /(.*)/$
   static_files: public/\1/index.html
   upload: .*\.html$
@@ -65,6 +60,7 @@ skip_files: |
   (data\/.*)|
   (static\/.*)|
   (layouts\/.*)|
+  (themes\/.*)|
   (\.git\/.*)|
   (\.gitignore)|
   )$
