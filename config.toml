@@ -1,6 +1,6 @@
 baseURL = "https://thomasmullaly.codes/"
 languageCode = "en-us"
-title = "Thomas's Blog"
+title = "Thomas Mullaly Codes"
 theme = "ghostwriter"
 googleAnalytics = "UA-77282496-2"
 
@@ -9,12 +9,25 @@ googleAnalytics = "UA-77282496-2"
 
 [Taxonomies]
   tag = "tags"
+  category = "categories"
 
 [Author]
   name = "Thomas Mullaly"
+  profile = "/page/about-me"
 
 [Params]
   twitter = "https://twitter.com/thomas_mullaly"
   github = "https://github.com/thomas-mullaly"
   email = "thomas.mullaly@gmail.com"
   shareGooglePlus = false
+  dateFormat = "January 2, 2006"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "About"
+  url = "/page/about-me"
+  weight = 2

@@ -4,6 +4,7 @@ date: 2016-06-15
 draft: false
 author: "Thomas Mullaly"
 tags: ["container-engine","kubernetes","ghost","mysql"]
+categories: ["coding"]
 ---
 
 This is the first post in a series that will document how I got my [Ghost blog](https://ghost.org/) up and running using [Google Cloud Container Engine](https://cloud.google.com/container-engine/) (GKE). By the end of this, you will have a basic (but useable) blog set up that is publicly accessible. This post is going to follow along pretty closely with Google's tutorial for [hosting a Wordpress blog](https://cloud.google.com/container-engine/docs/tutorials/persistent-disk/) using GKE. I deviate from the Wordpress tutorial in a few key areas:

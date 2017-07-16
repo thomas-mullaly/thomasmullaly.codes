@@ -3,6 +3,7 @@ title: "Let The Blogging Begin"
 date: 2016-05-08
 draft: false
 author: "Thomas Mullaly"
+categories: ["personal"]
 ---
 
 Hello! Welcome to my blog.

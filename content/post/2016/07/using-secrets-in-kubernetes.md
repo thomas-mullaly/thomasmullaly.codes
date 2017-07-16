@@ -4,6 +4,7 @@ date: 2016-07-16
 draft: false
 author: "Thomas Mullaly"
 tags: ["container-engine", "kubernetes"]
+categories: ["coding"]
 ---
 
 In my previous [blog post]({{< relref "post/2016/06/host-ghost-using-container-engine.md" >}}) I detailed how to setup Ghost and MySQL using Google Cloud Container Engine (GKE) and Kubernetes. While the set up works great the database credentials were hard-coded and completely visible to anyone that has access to the repository. Ideally you would not want these credentials stored as clear text in your source control (especially production credentials). To help facilitate this, Kubernetes has the concept of a Secret. Secrets allow small amounts of sensitive data (tokens, passwords, credentials) to be stored as objects in the cluster. Since Secrets are stored in the cluster it allows for greater control over who has access to them. I highly recommend reading the [documentation](http://kubernetes.io/docs/user-guide/secrets/) on what Secrets are and how they work. The ideal candidate for using a Secret in this blog set up is for the credentials to the MySQL database.
@@ -55,20 +56,20 @@ Now that the Secret has been created on the cluster, we can start consuming the 
   name: mysql-container
   env:
   - name: MYSQL_ROOT_PASSWORD
-    <b>valueFrom:
+    valueFrom:
       secretKeyRef:
         name: mysql-secrets
-        key: mysql-root-password</b>
+        key: mysql-root-password
   - name: MYSQL_USER
-    <b>valueFrom:
+    valueFrom:
       secretKeyRef:
         name: mysql-secrets
-        key: mysql-user</b>
+        key: mysql-user
   - name: MYSQL_PASSWORD
-    <b>valueFrom:
+    valueFrom:
       secretKeyRef:
         name: mysql-secrets
-        key: mysql-password</b>
+        key: mysql-password
 ```
 
 Instead of defining the values for these environment variables inline we now use the `valueFrom` and `secretKeyRef` constructs. These constructs allows us to reference a Secret by `name` (`mysql-secrets`) and to reference a specific key from the Secret. We also make the same changes to the Ghost Deployment.
@@ -77,20 +78,20 @@ Instead of defining the values for these environment variables inline we now use
 
 ```yaml
 - name: DB_USER
-  <b>valueFrom:
+  valueFrom:
       secretKeyRef:
         name: mysql-secrets
-        key: mysql-user</b>
+        key: mysql-user
 - name: DB_PASSWORD
-  <b>valueFrom:
+  valueFrom:
       secretKeyRef:
         name: mysql-secrets
-        key: mysql-password</b>
+        key: mysql-password
 - name: DB_NAME
-  <b>valueFrom:
+  valueFrom:
       secretKeyRef:
         name: mysql-secrets
-        key: mysql-password</b>
+        key: mysql-password
 ```
 
 Now that we've changed the Deployments, we can push the changes to the cluster:
