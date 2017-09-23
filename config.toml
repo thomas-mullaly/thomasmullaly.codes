@@ -1,7 +1,7 @@
 baseURL = "https://thomasmullaly.codes/"
 languageCode = "en-us"
 title = "Thomas Mullaly"
-theme = "mainroad"
+theme = "Mainroad"
 paginate = "10"
 googleAnalytics = "UA-77282496-2"
 disqusShortname = "thomas-mullaly-codes"
