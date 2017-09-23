@@ -2,6 +2,7 @@
 title = "About Me"
 date = 2017-07-15
 author = "Thomas Mullaly"
+disable_comments = true
 +++
 
 Hello!
