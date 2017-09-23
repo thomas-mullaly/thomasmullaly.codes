@@ -1,7 +1,8 @@
 baseURL = "https://thomasmullaly.codes/"
 languageCode = "en-us"
-title = "Thomas Mullaly Codes"
-theme = "ghostwriter"
+title = "Thomas Mullaly"
+theme = "mainroad"
+paginate = "10"
 googleAnalytics = "UA-77282496-2"
 disqusShortname = "thomas-mullaly-codes"
 
@@ -15,13 +16,25 @@ disqusShortname = "thomas-mullaly-codes"
 [Author]
   name = "Thomas Mullaly"
   profile = "/page/about-me/"
+  avatar = "/images/me.jpg"
 
 [Params]
-  twitter = "https://twitter.com/thomas_mullaly"
-  github = "https://github.com/thomas-mullaly"
-  email = "thomas.mullaly@gmail.com"
+  subtitle = "Ramblings of a software developer"
   shareGooglePlus = false
   dateFormat = "January 2, 2006"
+  opengraph = true
+  readmore = true
+  post_navigation = true
+  postSections = ["post"]
+
+[Params.widgets]
+  search = false
+  recent_articles = true
+  categories = true
+  tags = true
+  social_twitter = "https://twitter.com/thomas_mullaly"
+  social_github = "https://github.com/thomas-mullaly"
+  social_email = "thomas.mullaly@gmail.com"
 
 [[menu.main]]
   name = "Home"
