@@ -17,7 +17,7 @@ handlers:
   static_files: public/favicon.ico
   expiration: "1d"
   secure: always
-  upload: favicon.ico
+  upload: /favicon.ico
 - url: /404.html
   static_files: public/404.html
   upload: /404.html
