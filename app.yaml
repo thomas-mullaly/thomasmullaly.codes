@@ -13,8 +13,8 @@ handlers:
   mime_type: application/xml
   static_files: public/\1
   upload: public/(.*\.xml)
-- url: /favicon
-  static_dir: public/favicon
+- url: /favicon.ico
+  static_files: public/favicon.ico
   expiration: "1d"
   secure: always
 - url: /404.html
