@@ -19,7 +19,7 @@ disqusShortname = "thomas-mullaly-codes"
   avatar = "/images/me.jpg"
 
 [Params]
-  subtitle = "Ramblings of a software developer"
+  subtitle = "Software Engineer"
   shareGooglePlus = false
   dateFormat = "January 2, 2006"
   opengraph = true
