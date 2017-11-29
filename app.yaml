@@ -14,7 +14,7 @@ handlers:
   static_files: public/\1
   upload: public/(.*\.xml)
 - url: /favicon.ico
-  static_files: public/favicon.icon
+  static_files: public/favicon.ico
   expiration: "1d"
   secure: always
   upload: /favicon.ico
