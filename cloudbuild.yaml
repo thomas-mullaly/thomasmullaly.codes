@@ -15,7 +15,7 @@ steps:
   args: ['submodule', 'update']
   waitFor:
   - submoduleInit
-- name: felicianotech/docker-hugo:0.31.0
+- name: felicianotech/docker-hugo:0.31.1
   args: ['hugo', '-b', '$_BASE_URL']
   id: hugo
   env:
