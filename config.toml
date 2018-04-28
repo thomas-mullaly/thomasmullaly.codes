@@ -34,7 +34,7 @@ disqusShortname = "thomas-mullaly-codes"
   tags = true
   social_twitter = "thomas_mullaly"
   social_github = "thomas-mullaly"
-  social_email = "thomas.mullaly@gmail.com"
+  social_email = "me@thomasmullaly.codes"
 
 [[menu.main]]
   name = "Home"
