@@ -15,7 +15,7 @@ steps:
   args: ['submodule', 'update']
   waitFor:
   - submoduleInit
-- name: felicianotech/docker-hugo:0.46
+- name: cibuilds/hugo:0.48
   args: ['hugo', '-b', '$_BASE_URL']
   id: hugo
   env:
