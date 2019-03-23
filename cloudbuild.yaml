@@ -15,7 +15,7 @@ steps:
   args: ['submodule', 'update']
   waitFor:
   - submoduleInit
-- name: cibuilds/hugo:0.48
+- name: cibuilds/hugo:0.54.0
   args: ['hugo', '-b', '$_BASE_URL']
   id: hugo
   env:
