@@ -1,0 +1,10 @@
+archetypes/
+content/
+layouts/
+resources/
+static/
+themes/
+.gitignore
+.gitmodules
+cloudbuild.yaml
+config.toml

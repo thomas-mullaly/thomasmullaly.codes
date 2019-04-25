@@ -1,7 +1,6 @@
-runtime: go
-api_version: go1
-threadsafe: true
+runtime: go112
 
+main: ./web
 default_expiration: "10m"
 
 handlers:
@@ -40,32 +39,5 @@ handlers:
   upload: .*\.html$
   secure: always
 - url: /.*
-  script: _go_app
+  script: auto
   secure: always
-
-skip_files: |
-  ^(.*/)?(
-  (archetypes/.*)|
-  (app\.yaml)|
-  (app\.yml)|
-  (index\.yaml)|
-  (index\.yml)|
-  (config\.yaml)|
-  (cloudbuild\.yaml)|
-  (#.*#)|
-  (.*~)|
-  (.*\.py[co])|
-  (.*\.po)|
-  (.*\.pot)|
-  (\..*)|
-  (manage\.py)|
-  (README\.md)|
-  (LICENSE)|
-  (content\/.*)|
-  (data\/.*)|
-  (static\/.*)|
-  (layouts\/.*)|
-  (themes\/.*)|
-  (\.git\/.*)|
-  (\.gitignore)|
-  )$
