@@ -24,7 +24,8 @@ disqusShortname = "thomas-mullaly-codes"
   opengraph = true
   readmore = true
   post_navigation = true
-  postSections = ["post"]
+  mainSections = ["post"]
+  post_meta = ["date", "categories"]
 
 [Params.widgets]
   recent_num = 5
