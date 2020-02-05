@@ -1,12 +1,12 @@
 steps:
 - name: ubuntu
-  id: mkdir
+  id: mkdirSophie
   args: ['mkdir', '-p', 'static/images/sophie']
 - name: gcr.io/cloud-builders/gsutil
   id: cat
   args: ['-m', 'cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
   waitFor:
-  - mkdir
+  - mkdirSophie
 - name: gcr.io/cloud-builders/git
   id: submoduleInit
   args: ['submodule', 'init']
@@ -15,6 +15,9 @@ steps:
   args: ['submodule', 'update']
   waitFor:
   - submoduleInit
+- name: ubuntu
+  id: mkdirResourcew
+  args: ['mkdir', '-p', 'resources']
 - name: cibuilds/hugo:0.64.0
   args: ['hugo', '-b', '$_BASE_URL']
   id: hugo
@@ -22,6 +25,7 @@ steps:
   - HUGO_ENV=production
   waitFor:
   - cat
+  - mkdirResources
   - submoduleUpdate
 - name: gcr.io/cloud-builders/gcloud
   args: ['app', 'deploy', '--quiet', '--project', '$PROJECT_ID', app.yaml]
