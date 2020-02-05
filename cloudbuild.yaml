@@ -16,7 +16,7 @@ steps:
   waitFor:
   - submoduleInit
 - name: ubuntu
-  id: mkdirResourcew
+  id: mkdirResources
   args: ['mkdir', '-p', 'resources']
 - name: cibuilds/hugo:0.64.0
   args: ['hugo', '-b', '$_BASE_URL']
