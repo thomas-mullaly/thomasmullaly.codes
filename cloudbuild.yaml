@@ -17,7 +17,7 @@ steps:
   - submoduleInit
 - name: ubuntu
   id: mkdirResources
-  args: ['mkdir', '-p', 'resources']
+  args: ['mkdir', '-p', 'resources/_gen/assets', 'resources/_gen/images']
 - name: cibuilds/hugo:0.64.0
   args: ['hugo', '-b', '$_BASE_URL']
   id: hugo
