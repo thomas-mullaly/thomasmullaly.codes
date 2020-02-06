@@ -15,17 +15,17 @@ steps:
   args: ['submodule', 'update']
   waitFor:
   - submoduleInit
-- name: ubuntu
-  id: mkdirResources
-  args: ['mkdir', '-p', 'resources/_gen/assets', 'resources/_gen/images']
+- name: 'ubuntu'
+  id: chmodHack
+  args: ['chmod', 'a+r', '-R', '.']
 - name: cibuilds/hugo:0.64.0
-  args: ['hugo', '-b', '$_BASE_URL']
+  args: ['hugo', '-v', '-b', '$_BASE_URL']
   id: hugo
   env:
   - HUGO_ENV=production
   waitFor:
   - cat
-  - mkdirResources
+  - chmodHack
   - submoduleUpdate
 - name: gcr.io/cloud-builders/gcloud
   args: ['app', 'deploy', '--quiet', '--project', '$PROJECT_ID', app.yaml]
