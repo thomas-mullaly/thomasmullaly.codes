@@ -7,7 +7,7 @@ steps:
   - |
     mkdir -p static/images/sophie
     chmod a+wr -R .
-    ls -al /themes/
+    ls -al
 - name: gcr.io/cloud-builders/gsutil
   id: cat
   args: ['-m', 'cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
