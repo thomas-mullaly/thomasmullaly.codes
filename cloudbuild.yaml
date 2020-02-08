@@ -1,6 +1,7 @@
 steps:
 - name: gcr.io/cloud-builders/git
   id: setup
+  entrypoint: bash
   args:
   - '-c'
   - |
