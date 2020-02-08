@@ -7,20 +7,12 @@ steps:
   - |
     mkdir -p static/images/sophie
     chmod a+wr -R .
-    ls -al
+    git clone https://github.com/Vimux/Mainroad themes/Mainroad
 - name: gcr.io/cloud-builders/gsutil
   id: cat
   args: ['-m', 'cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
   waitFor:
   - setup
-- name: gcr.io/cloud-builders/git
-  id: submoduleInit
-  args: ['submodule', 'init']
-- name: gcr.io/cloud-builders/git
-  id: submoduleUpdate
-  args: ['submodule', 'update']
-  waitFor:
-  - submoduleInit
 - name: cibuilds/hugo:0.64.0
   args: ['hugo', '-b', '$_BASE_URL']
   id: hugo
@@ -28,7 +20,6 @@ steps:
   - HUGO_ENV=production
   waitFor:
   - cat
-  - submoduleUpdate
 - name: gcr.io/cloud-builders/gcloud
   args: ['app', 'deploy', '--quiet', '--project', '$PROJECT_ID', app.yaml]
   waitFor:
