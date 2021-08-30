@@ -13,7 +13,7 @@ steps:
   args: ['-m', 'cp', '-r', 'gs://sophie-pictures/*.jpg', 'static/images/sophie']
   waitFor:
   - setup
-- name: cibuilds/hugo:0.64.0
+- name: cibuilds/hugo:0.86.1
   args: ['hugo', '-b', '$_BASE_URL']
   id: hugo
   env:

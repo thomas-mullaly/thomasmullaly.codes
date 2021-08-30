@@ -1,7 +1,6 @@
-runtime: go112
-
-main: ./web
-default_expiration: "10m"
+runtime: ruby27
+entrypoint: bundle exec ruby app.rb
+instance_class: F2
 
 handlers:
 - url: /
